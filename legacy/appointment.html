@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment | Dr. M. Faizan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            border: 1px solid #e2e8f0;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(43, 182, 115, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav">
+            <a href="index.html" class="logo">Dr. M. Faizan</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="appointment.html">Appointment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section style="padding-top: 150px;">
+        <div class="container" style="max-width: 800px;">
+            <div class="card reveal">
+                <h2 style="text-align: center; margin-bottom: 1rem;">Book an Appointment</h2>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">Please fill out the form
+                    below to request a consultation. Our clinic will contact you shortly.</p>
+
+                <form id="appointment-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+91" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email (Optional)</label>
+                        <input type="email" placeholder="example@mail.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Select Concern</label>
+                        <select required>
+                            <option value="">Choose a condition...</option>
+                            <option value="anxiety">Anxiety / Panic Attacks</option>
+                            <option value="depression">Depression</option>
+                            <option value="bipolar">Bipolar Disorder</option>
+                            <option value="sleep">Sleep / Stress Issues</option>
+                            <option value="counseling">Counseling & Therapy</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message / Additional Details</label>
+                        <textarea rows="4" placeholder="How can we help you?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; padding: 1.2rem; font-size: 1.1rem;">Submit Request</button>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <p style="margin-bottom: 1rem;">OR</p>
+                        <a href="https://wa.me/919079383340" class="btn btn-accent"
+                            style="width: 100%; background: #25d366;"><i class="fab fa-whatsapp"></i> Quick Booking on
+                            WhatsApp</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 Dr. M. Faizan. Jaipur, Rajasthan.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
