@@ -4,38 +4,41 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-const faqs = [
-    {
-        q: "Is psychiatric treatment confidential?",
-        a: "Yes, absolute confidentiality is our top priority. All consultations and medical records are kept completely private in accordance with medical ethics and law."
-    },
-    {
-        q: "Do you treat both anxiety and depression?",
-        a: "Yes, we specialize in evidence-based treatments for both anxiety disorders and clinical depression, tailored to each patient's unique needs."
-    },
-    {
-        q: "Can I book an appointment through WhatsApp?",
-        a: "Certainly. You can use the quick WhatsApp button on our website for an immediate response and booking support."
-    },
-    {
-        q: "How long does the treatment usually take?",
-        a: "The duration of treatment varies significantly depending on the individual and the nature of the condition. We focus on long-term, sustainable healing."
-    },
-    {
-        q: "When should I consult a psychiatrist?",
-        a: "You should consider a consultation if you experience persistent symptoms like sadness, excessive worry, sleep disturbances, or mood swings that interfere with your daily life."
-    }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FAQAccordion = () => {
+    const { t } = useLanguage();
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+    const faqs = [
+        {
+            q: t("home.faq.q1"),
+            a: t("home.faq.a1")
+        },
+        {
+            q: t("home.faq.q2"),
+            a: t("home.faq.a2")
+        },
+        {
+            q: t("home.faq.q3"),
+            a: t("home.faq.a3")
+        },
+        {
+            q: t("home.faq.q4"),
+            a: t("home.faq.a4")
+        },
+        {
+            q: t("home.faq.q5"),
+            a: t("home.faq.a5")
+        }
+    ];
 
     return (
         <section className="py-24 bg-white">
             <div className="container mx-auto px-6 max-w-3xl">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
-                    <p className="text-gray-500">Clear answers to your common concerns about mental health care.</p>
+                    <h2 className="text-4xl font-bold text-primary mb-4">{t("home.faq.title")}</h2>
+                    <p className="text-gray-500">{t("home.faq.subtitle")}</p>
                 </div>
 
                 <div className="space-y-4">

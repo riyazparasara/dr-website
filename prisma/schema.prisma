@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  passwordHash  String
+  name          String?
+  role          String    @default("ADMIN")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Appointment {
+  id              String    @id @default(cuid())
+  patientName     String
+  phone           String
+  email           String?
+  concern         String
+  preferredDate   DateTime
+  message         String?
+  status          String    @default("PENDING") // PENDING, CONFIRMED, COMPLETED, CANCELLED
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model Service {
+  id          String    @id @default(cuid())
+  category    String    // MENTAL_HEALTH, PSYCHIATRIC, CHILD, ADDICTION, etc.
+  title       String
+  description String
+  icon        String    // Lucide icon name
+  active      Boolean   @default(true)
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Blog {
+  id              String    @id @default(cuid())
+  slug            String    @unique
+  title           String
+  content         String
+  excerpt         String?
+  coverImage      String?
+  seoTitle        String?
+  seoDescription  String?
+  published       Boolean   @default(false)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model Post {
+  id          String    @id @default(cuid())
+  type        String    // TEXT, IMAGE, VIDEO, MIXED
+  title       String
+  blocks      String    // Stringified array of {type, content, order}
+  published   Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Banner {
+  id          String    @id @default(cuid())
+  headline    String
+  subtext     String?
+  image       String
+  buttonText  String?
+  buttonLink  String?
+  active      Boolean   @default(true)
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Settings {
+  id              String    @id @default(cuid())
+  clinicName      String
+  phone           String
+  whatsappPhone   String
+  email           String
+  address         String
+  city            String
+  state           String
+  pincode         String
+  facebookUrl     String?
+  instagramUrl    String?
+  twitterUrl      String?
+  youtubeUrl      String?
+  updatedAt       DateTime  @updatedAt
+}

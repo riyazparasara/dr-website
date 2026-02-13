@@ -6,11 +6,13 @@ import Testimonials from "@/components/sections/Testimonials";
 import FAQAccordion from "@/components/sections/FAQAccordion";
 import BlogPreview from "@/components/sections/BlogPreview";
 import CTAStrip from "@/components/sections/CallToActionStrip";
+import MultimediaPostsSection from "@/components/sections/MultimediaPostsSection";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
+      <MultimediaPostsSection />
       <StatsSection />
       <ServicesSection />
       <ApproachSection />

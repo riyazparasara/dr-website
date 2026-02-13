@@ -32,9 +32,13 @@ const AboutPage = () => {
                             viewport={{ once: true }}
                             className="w-full lg:w-1/2"
                         >
-                            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] bg-gray-100 flex items-center justify-center">
-                                <Heart className="w-32 h-32 text-gray-200" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+                            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] bg-gray-100 flex items-center justify-center group">
+                                <img
+                                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2940&auto=format&fit=crop"
+                                    alt="Dr. M. Faizan"
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                                 <div className="absolute bottom-10 left-10 text-white">
                                     <p className="text-2xl font-bold mb-1">Dr. M. Faizan</p>
                                     <p className="text-sm opacity-90">MD Psychiatry (SMS Medical College)</p>

@@ -5,7 +5,11 @@ import AppointmentForm from "@/components/sections/AppointmentForm";
 import { motion } from "framer-motion";
 import { Clock, MapPin, MessageCircle, Phone } from "lucide-react";
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const AppointmentPage = () => {
+    const { t } = useLanguage();
+
     return (
         <div className="pt-24 min-h-screen bg-bg-main">
             <section className="py-20">
@@ -19,34 +23,38 @@ const AppointmentPage = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 className="max-w-xl"
                             >
-                                <span className="text-accent font-bold tracking-widest uppercase text-xs mb-4 block">Schedule Your Visit</span>
-                                <h1 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight">Start Your Journey To Mental Wellness</h1>
+                                <span className="text-accent font-bold tracking-widest uppercase text-xs mb-4 block">
+                                    {t("appointment.badge")}
+                                </span>
+                                <h1 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight">
+                                    {t("appointment.title")}
+                                </h1>
                                 <p className="text-gray-500 mb-12 leading-relaxed">
-                                    Choosing to seek help is the first and most important step. We ensure a smooth, confidential, and supportive booking experience.
+                                    {t("appointment.description")}
                                 </p>
 
                                 <div className="space-y-8 mb-12">
                                     <div className="flex gap-6 items-start p-6 bg-white rounded-3xl shadow-sm border border-gray-100">
                                         <div className="text-accent p-3 bg-accent/5 rounded-xl"><Clock size={24} /></div>
                                         <div>
-                                            <h4 className="font-bold text-primary mb-1">Clinic Timings</h4>
-                                            <p className="text-sm text-gray-500">Mon - Sat: 11:00 AM - 07:00 PM</p>
-                                            <p className="text-xs text-accent mt-1 font-bold">Sundays by Priority Appointment Only</p>
+                                            <h4 className="font-bold text-primary mb-1">{t("appointment.timings_title")}</h4>
+                                            <p className="text-sm text-gray-500">{t("appointment.timings_days")}</p>
+                                            <p className="text-xs text-accent mt-1 font-bold">{t("appointment.timings_note")}</p>
                                         </div>
                                     </div>
                                     <div className="flex gap-6 items-start p-6 bg-white rounded-3xl shadow-sm border border-gray-100">
                                         <div className="text-accent p-3 bg-accent/5 rounded-xl"><MapPin size={24} /></div>
                                         <div>
-                                            <h4 className="font-bold text-primary mb-1">Our Location</h4>
-                                            <p className="text-sm text-gray-500 italic">37, Kidwai Nagar, Imli Phatak, Jaipur 302015</p>
+                                            <h4 className="font-bold text-primary mb-1">{t("appointment.location_title")}</h4>
+                                            <p className="text-sm text-gray-500 italic">{t("appointment.location_address")}</p>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="p-10 rounded-[2.5rem] bg-primary text-white space-y-6 shadow-xl relative overflow-hidden">
                                     <MessageCircle className="absolute -bottom-10 -right-10 text-white/5 w-48 h-48" />
-                                    <h3 className="text-2xl font-bold relative z-10">Prefer Instant Booking?</h3>
-                                    <p className="text-gray-300 text-sm relative z-10">Chat directly with our reception on WhatsApp for quick slot availability and clinical inquiries.</p>
+                                    <h3 className="text-2xl font-bold relative z-10">{t("appointment.instant_title")}</h3>
+                                    <p className="text-gray-300 text-sm relative z-10">{t("appointment.instant_desc")}</p>
                                     <div className="flex flex-col sm:flex-row gap-4 relative z-10">
                                         <a
                                             href="https://wa.me/919079383340"
@@ -58,7 +66,7 @@ const AppointmentPage = () => {
                                             href="tel:+919079383340"
                                             className="bg-white/10 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-white/20 transition-smooth"
                                         >
-                                            <Phone size={20} /> Call Now
+                                            <Phone size={20} /> {t("home.hero.cta_call")}
                                         </a>
                                     </div>
                                 </div>

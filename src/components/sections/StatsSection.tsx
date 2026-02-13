@@ -1,33 +1,35 @@
 "use client";
 
-import React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Award, GraduationCap, Users, ShieldCheck } from "lucide-react";
 
-const stats = [
-    {
-        icon: <Award className="w-8 h-8 text-accent" />,
-        value: "10+ Years",
-        label: "Clinical Experience"
-    },
-    {
-        icon: <GraduationCap className="w-8 h-8 text-accent" />,
-        value: "MBBS + MD",
-        label: "SMS Medical College"
-    },
-    {
-        icon: <Users className="w-8 h-8 text-accent" />,
-        value: "Hundreds",
-        label: "Trusted Patients"
-    },
-    {
-        icon: <ShieldCheck className="w-8 h-8 text-accent" />,
-        value: "100%",
-        label: "Confidential Support"
-    }
-];
-
 const StatsSection = () => {
+    const { t } = useLanguage();
+
+    const stats = [
+        {
+            icon: <Award className="w-8 h-8 text-accent" />,
+            value: t("home.stats.experience_value"),
+            label: t("home.stats.experience_label")
+        },
+        {
+            icon: <GraduationCap className="w-8 h-8 text-accent" />,
+            value: t("home.stats.education_value"),
+            label: t("home.stats.education_label")
+        },
+        {
+            icon: <Users className="w-8 h-8 text-accent" />,
+            value: t("home.stats.patients_value"),
+            label: t("home.stats.patients_label")
+        },
+        {
+            icon: <ShieldCheck className="w-8 h-8 text-accent" />,
+            value: t("home.stats.confidential_value"),
+            label: t("home.stats.confidential_label")
+        }
+    ];
+
     return (
         <section className="bg-white py-20">
             <div className="container mx-auto px-6">

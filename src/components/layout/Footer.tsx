@@ -1,8 +1,14 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { Instagram, Youtube, Facebook, MapPin, Phone, Mail } from "lucide-react";
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const Footer = () => {
+    const { t } = useLanguage();
+
     return (
         <footer className="bg-primary text-white pt-20 pb-10">
             <div className="container mx-auto px-6">
@@ -10,13 +16,13 @@ const Footer = () => {
                     {/* Brand Info */}
                     <div className="md:col-span-1">
                         <Link href="/" className="inline-block mb-6">
-                            <span className="text-2xl font-bold tracking-tight">Dr. M. Faizan</span>
+                            <span className="text-2xl font-bold tracking-tight">{t("home.hero.title")}</span>
                             <p className="text-[10px] uppercase tracking-[3px] text-accent font-semibold">
-                                Psychiatrist
+                                {t("home.hero.specialty")}
                             </p>
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                            Compassionate mental health care and holistic healing for a better life. Alumni of SMS Medical College, dedicated to your wellness.
+                            {t("footer.description")}
                         </p>
                         <div className="flex gap-4">
                             <a
@@ -48,26 +54,26 @@ const Footer = () => {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+                        <h4 className="text-lg font-semibold mb-6">{t("footer.quick_links")}</h4>
                         <ul className="flex flex-col gap-4 list-none">
                             <li>
-                                <Link href="/" className="text-gray-400 hover:text-white transition-colors text-sm">Home</Link>
+                                <Link href="/" className="text-gray-400 hover:text-white transition-colors text-sm">{t("nav.home")}</Link>
                             </li>
                             <li>
-                                <Link href="/about" className="text-gray-400 hover:text-white transition-colors text-sm">About Doctor</Link>
+                                <Link href="/about" className="text-gray-400 hover:text-white transition-colors text-sm">{t("footer.about_doctor")}</Link>
                             </li>
                             <li>
-                                <Link href="/services" className="text-gray-400 hover:text-white transition-colors text-sm">Our Services</Link>
+                                <Link href="/services" className="text-gray-400 hover:text-white transition-colors text-sm">{t("nav.services")}</Link>
                             </li>
                             <li>
-                                <Link href="/blog" className="text-gray-400 hover:text-white transition-colors text-sm">Mental Health Blog</Link>
+                                <Link href="/blog" className="text-gray-400 hover:text-white transition-colors text-sm">{t("footer.blog")}</Link>
                             </li>
                         </ul>
                     </div>
 
                     {/* Services */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6">Services</h4>
+                        <h4 className="text-lg font-semibold mb-6">{t("footer.services_title")}</h4>
                         <ul className="flex flex-col gap-4 list-none text-sm text-gray-400">
                             <li>Anxiety Disorders</li>
                             <li>Depression Treatment</li>
@@ -79,7 +85,7 @@ const Footer = () => {
 
                     {/* Contact */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
+                        <h4 className="text-lg font-semibold mb-6">{t("footer.contact_title")}</h4>
                         <ul className="flex flex-col gap-4 list-none">
                             <li className="flex gap-3 text-sm text-gray-400 items-start">
                                 <MapPin size={18} className="text-accent shrink-0" />
@@ -98,9 +104,9 @@ const Footer = () => {
                 </div>
 
                 <div className="pt-10 border-t border-gray-800 text-center text-sm text-gray-500">
-                    <p>&copy; {new Date().getFullYear()} Dr. M. Faizan. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} {t("home.hero.title")}. {t("footer.rights")}</p>
                     <p className="mt-2 text-[10px] text-gray-600 uppercase tracking-widest">
-                        Providing compassionate mental health support in Jaipur
+                        {t("footer.tagline")}
                     </p>
                 </div>
             </div>

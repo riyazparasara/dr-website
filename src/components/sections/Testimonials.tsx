@@ -4,28 +4,32 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
-const testimonials = [
-    {
-        text: "The most supportive psychiatrist I’ve met. Dr. Faizan really listens and understands the complexity of mental health issues.",
-        author: "Patient A"
-    },
-    {
-        text: "Helped me overcome severe anxiety with confidence. The medication and therapy balance was perfect for my recovery.",
-        author: "Patient B"
-    },
-    {
-        text: "Professional, kind, and highly recommended in Jaipur. A safe space for anyone struggling with mental wellness.",
-        author: "Patient C"
-    }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Testimonials = () => {
+    const { t } = useLanguage();
+
+    const testimonials = [
+        {
+            text: t("home.testimonials.t1_text"),
+            author: t("home.testimonials.t1_author")
+        },
+        {
+            text: t("home.testimonials.t2_text"),
+            author: t("home.testimonials.t2_author")
+        },
+        {
+            text: t("home.testimonials.t3_text"),
+            author: t("home.testimonials.t3_author")
+        }
+    ];
+
     return (
         <section className="py-24 bg-bg-main">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-primary mb-4">What Our Patients Say</h2>
-                    <p className="text-gray-500">Trusted care from Jaipur's leading mental health specialist.</p>
+                    <h2 className="text-4xl font-bold text-primary mb-4">{t("home.testimonials.title")}</h2>
+                    <p className="text-gray-500">{t("home.testimonials.subtitle")}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

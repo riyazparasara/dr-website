@@ -1,0 +1,135 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "blog": "Blog",
+        "contact": "Contact",
+        "bookNow": "Book Appointment"
+    },
+    "home": {
+        "hero": {
+            "badge": "Empowering Minds in Jaipur",
+            "title": "Dr. M. Faizan",
+            "specialty": "Mental Wellness Specialist",
+            "description": "Personalized psychiatric care for Anxiety, Depression, Bipolar Disorder, Schizophrenia & Stress-related challenges. Restoring balance through compassionate healing.",
+            "cta_appointment": "Book Appointment",
+            "cta_whatsapp": "WhatsApp Consultation",
+            "cta_call": "Call Now"
+        },
+        "services": {
+            "badge": "Our Expertise",
+            "title": "Specialized Conditions Treated",
+            "description": "We provide comprehensive psychiatric evaluations and personalized treatment plans for a wide range of mental health challenges."
+        },
+        "approach": {
+            "title": "Your Mental Health Journey Matters",
+            "subtitle": "A transparent, three-step process towards emotional wellness and balance.",
+            "step1_title": "1. Understand Your Concerns",
+            "step1_desc": "We start with a deep, compassionate evaluation to understand the root of your mental health challenges.",
+            "step2_title": "2. Personalized Treatment Plan",
+            "step2_desc": "A tailored combination of therapy, medication, and lifestyle guidance designed specifically for your needs.",
+            "step3_title": "3. Long-Term Healing & Support",
+            "step3_desc": "Continuous care and support to ensure sustainable recovery and a better quality of life."
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "subtitle": "Clear answers to your common concerns about mental health care.",
+            "q1": "Is psychiatric treatment confidential?",
+            "a1": "Yes, absolute confidentiality is our top priority. All consultations and medical records are kept completely private in accordance with medical ethics and law.",
+            "q2": "Do you treat both anxiety and depression?",
+            "a2": "Yes, we specialize in evidence-based treatments for both anxiety disorders and clinical depression, tailored to each patient's unique needs.",
+            "q3": "Can I book an appointment through WhatsApp?",
+            "a3": "Certainly. You can use the quick WhatsApp button on our website for an immediate response and booking support.",
+            "q4": "How long does the treatment usually take?",
+            "a4": "The duration of treatment varies significantly depending on the individual and the nature of the condition. We focus on long-term, sustainable healing.",
+            "q5": "When should I consult a psychiatrist?",
+            "a5": "You should consider a consultation if you experience persistent symptoms like sadness, excessive worry, sleep disturbances, or mood swings that interfere with your daily life."
+        },
+        "cta": {
+            "title": "Take the First Step Toward Better Mental Health Today",
+            "subtitle": "Expert consultations tailored to your journey. We are here to listen, understand, and help you heal.",
+            "button_book": "Book Your Appointment",
+            "button_call": "Call Now"
+        },
+        "stats": {
+            "experience_value": "10+ Years",
+            "experience_label": "Clinical Experience",
+            "education_value": "MBBS + MD",
+            "education_label": "SMS Medical College",
+            "patients_value": "Hundreds",
+            "patients_label": "Trusted Patients",
+            "confidential_value": "100%",
+            "confidential_label": "Confidential Support"
+        },
+        "testimonials": {
+            "title": "Healing Journeys",
+            "subtitle": "Real stories from people who found hope and healing under our care.",
+            "t1_text": "Dr. Faizan is incredibly patient and understanding. His approach to treatment made me feel comfortable from day one.",
+            "t1_author": "Patient A",
+            "t2_text": "The best psychiatric care in Jaipur. Highly professional and effective treatment plans.",
+            "t2_author": "Patient B",
+            "t3_text": "I'm grateful for the support I received. It has truly changed my life for the better.",
+            "t3_author": "Patient C"
+        },
+        "blog": {
+            "title": "Latest Insights & Guidance",
+            "subtitle": "Expert articles to help you understand and manage your mental wellness.",
+            "cta": "View All Articles",
+            "read_more": "Read Article"
+        }
+    },
+    "appointment": {
+        "badge": "Schedule Your Visit",
+        "title": "Start Your Journey To Mental Wellness",
+        "description": "Choosing to seek help is the first and most important step. We ensure a smooth, confidential, and supportive booking experience.",
+        "timings_title": "Clinic Timings",
+        "timings_days": "Mon - Sat: 11:00 AM - 07:00 PM",
+        "timings_note": "Sundays by Priority Appointment Only",
+        "location_title": "Our Location",
+        "location_address": "37, Kidwai Nagar, Imli Phatak, Jaipur 302015",
+        "instant_title": "Prefer Instant Booking?",
+        "instant_desc": "Chat directly with our reception on WhatsApp for quick slot availability and clinical inquiries.",
+        "form": {
+            "title": "Book Your Consultation",
+            "subtitle": "Please fill in your details and we'll get back to you.",
+            "name_label": "Full Name",
+            "name_placeholder": "e.g. John Doe",
+            "phone_label": "Phone Number",
+            "phone_placeholder": "+91 XXXXX XXXXX",
+            "concern_label": "Primary Concern",
+            "concern_select": "Select Concern",
+            "concern_anxiety": "Anxiety / Panic",
+            "concern_depression": "Depression / Sadness",
+            "concern_bipolar": "Bipolar Disorder",
+            "concern_sleep": "Sleep Problems",
+            "concern_stress": "General Stress",
+            "concern_other": "Other Psychiatric Concern",
+            "date_label": "Preferred Date",
+            "email_label": "Email (Optional)",
+            "email_placeholder": "jane@example.com",
+            "message_label": "Your Message",
+            "message_placeholder": "Tell us briefly about your concerns...",
+            "submit": "Request Appointment Slot",
+            "confidential": "100% Confidential",
+            "quick_confirmation": "Quick Confirmation",
+            "success_title": "Request Received",
+            "success_desc": "Thank you for reaching out. A representative from Dr. Faizan's clinic will call you shortly to confirm your slot.",
+            "send_another": "Send Another Request"
+        }
+    },
+    "footer": {
+        "description": "Compassionate mental health care and holistic healing for a better life. Alumni of SMS Medical College, dedicated to your wellness.",
+        "quick_links": "Quick Links",
+        "services_title": "Our Expertise",
+        "contact_title": "Contact Us",
+        "rights": "All rights reserved.",
+        "tagline": "Providing compassionate mental health support in Jaipur",
+        "about_doctor": "About Doctor",
+        "blog": "Mental Health Blog"
+    },
+    "contact": {
+        "title": "Get in Touch",
+        "subtitle": "Reach out to us for any queries or to book your session."
+    }
+}

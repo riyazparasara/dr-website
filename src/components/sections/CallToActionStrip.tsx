@@ -5,7 +5,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar, Phone } from "lucide-react";
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const CTAStrip = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="py-20">
             <div className="container mx-auto px-6">
@@ -21,10 +25,15 @@ const CTAStrip = () => {
 
                     <div className="relative z-10 max-w-3xl mx-auto">
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                            Take the First Step Toward Better <span className="text-accent">Mental Health</span> Today
+                            {t("home.cta.title").split("Mental Health").map((part, i, arr) => (
+                                <React.Fragment key={i}>
+                                    {part}
+                                    {i < arr.length - 1 && <span className="text-accent">Mental Health</span>}
+                                </React.Fragment>
+                            ))}
                         </h2>
                         <p className="text-gray-300 mb-12 text-lg">
-                            Expert consultations tailored to your journey. We are here to listen, understand, and help you heal.
+                            {t("home.cta.subtitle")}
                         </p>
                         <div className="flex flex-wrap justify-center gap-6">
                             <Link
@@ -32,14 +41,14 @@ const CTAStrip = () => {
                                 className="bg-accent text-white px-10 py-5 rounded-2xl font-bold flex items-center gap-3 hover:bg-accent-hover transition-smooth shadow-lg"
                             >
                                 <Calendar size={20} />
-                                Book Your Appointment
+                                {t("home.cta.button_book")}
                             </Link>
                             <a
                                 href="tel:+919079383340"
                                 className="bg-white text-primary px-10 py-5 rounded-2xl font-bold flex items-center gap-3 hover:bg-gray-50 transition-smooth shadow-lg"
                             >
                                 <Phone size={20} />
-                                Call Now
+                                {t("home.cta.button_call")}
                             </a>
                         </div>
                     </div>

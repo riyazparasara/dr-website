@@ -1,34 +1,36 @@
 "use client";
 
-import React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Search, FileText, HeartPulse } from "lucide-react";
 
-const steps = [
-    {
-        icon: <Search className="w-8 h-8" />,
-        title: "1. Understand Your Concerns",
-        desc: "We start with a deep, compassionate evaluation to understand the root of your mental health challenges."
-    },
-    {
-        icon: <FileText className="w-8 h-8" />,
-        title: "2. Personalized Treatment Plan",
-        desc: "A tailored combination of therapy, medication, and lifestyle guidance designed specifically for your needs."
-    },
-    {
-        icon: <HeartPulse className="w-8 h-8" />,
-        title: "3. Long-Term Healing & Support",
-        desc: "Continuous care and support to ensure sustainable recovery and a better quality of life."
-    }
-];
-
 const ApproachSection = () => {
+    const { t } = useLanguage();
+
+    const steps = [
+        {
+            icon: <Search className="w-8 h-8" />,
+            title: t("home.approach.step1_title"),
+            desc: t("home.approach.step1_desc")
+        },
+        {
+            icon: <FileText className="w-8 h-8" />,
+            title: t("home.approach.step2_title"),
+            desc: t("home.approach.step2_desc")
+        },
+        {
+            icon: <HeartPulse className="w-8 h-8" />,
+            title: t("home.approach.step3_title"),
+            desc: t("home.approach.step3_desc")
+        }
+    ];
+
     return (
         <section className="py-24 bg-white">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-primary mb-4">Your Mental Health Journey Matters</h2>
-                    <p className="text-gray-500 max-w-2xl mx-auto">A transparent, three-step process towards emotional wellness and balance.</p>
+                    <h2 className="text-4xl font-bold text-primary mb-4">{t("home.approach.title")}</h2>
+                    <p className="text-gray-500 max-w-2xl mx-auto">{t("home.approach.subtitle")}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

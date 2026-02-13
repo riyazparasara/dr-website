@@ -6,19 +6,23 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Phone, Calendar } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Appointment", href: "/appointment" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const Header = () => {
+    const { t } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
+
+    const navLinks = [
+        { name: t("nav.home"), href: "/" },
+        { name: t("nav.about"), href: "/about" },
+        { name: t("nav.services"), href: "/services" },
+        { name: t("nav.bookNow"), href: "/appointment" },
+        { name: t("nav.blog"), href: "/blog" },
+        { name: t("nav.contact"), href: "/contact" },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,10 +42,10 @@ const Header = () => {
                     {/* Logo */}
                     <Link href="/" className="flex flex-col">
                         <span className="text-xl font-bold text-primary tracking-tight">
-                            Dr. M. Faizan
+                            {t("home.hero.title")}
                         </span>
                         <span className="text-[10px] uppercase tracking-[2px] text-accent font-semibold">
-                            Psychiatrist
+                            {t("home.hero.specialty")}
                         </span>
                     </Link>
 
@@ -66,22 +70,28 @@ const Header = () => {
                                 </li>
                             ))}
                         </ul>
+
+                        <LanguageToggle />
+
                         <Link
                             href="/appointment"
                             className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:translate-y-[-2px] transition-transform shadow-md flex items-center gap-2"
                         >
                             <Calendar size={16} />
-                            Book Appointment
+                            {t("nav.bookNow")}
                         </Link>
                     </div>
 
                     {/* Mobile Menu Toggle */}
-                    <button
-                        className="md:hidden text-primary"
-                        onClick={() => setIsOpen(!isOpen)}
-                    >
-                        {isOpen ? <X size={28} /> : <Menu size={28} />}
-                    </button>
+                    <div className="flex items-center gap-4 md:hidden">
+                        <LanguageToggle />
+                        <button
+                            className="text-primary"
+                            onClick={() => setIsOpen(!isOpen)}
+                        >
+                            {isOpen ? <X size={28} /> : <Menu size={28} />}
+                        </button>
+                    </div>
                 </nav>
             </div>
 
@@ -114,14 +124,14 @@ const Header = () => {
                                     className="bg-primary text-white text-center py-3 rounded-xl font-semibold flex justify-center items-center gap-2"
                                 >
                                     <Calendar size={20} />
-                                    Book Appointment
+                                    {t("nav.bookNow")}
                                 </Link>
                                 <a
                                     href="tel:+919079383340"
                                     className="text-primary text-center py-3 border border-primary rounded-xl font-semibold flex justify-center items-center gap-2"
                                 >
                                     <Phone size={20} />
-                                    Call Now
+                                    {t("home.hero.cta_call")}
                                 </a>
                             </li>
                         </ul>
