@@ -15,8 +15,19 @@ import {
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+interface Blog {
+    id: string;
+    title: string;
+    slug: string;
+    coverImage?: string;
+    createdAt: string;
+    published: boolean;
+    seoTitle?: string;
+    seoDescription?: string;
+}
+
 export default function BlogsPage() {
-    const [blogs, setBlogs] = useState([]);
+    const [blogs, setBlogs] = useState<Blog[]>([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -37,7 +48,7 @@ export default function BlogsPage() {
         }
     };
 
-    const togglePublish = async (id, currentStatus) => {
+    const togglePublish = async (id: string, currentStatus: boolean) => {
         try {
             await fetch(`/api/admin/blogs/${id}`, {
                 method: "PATCH",
@@ -133,8 +144,8 @@ export default function BlogsPage() {
                                             <button
                                                 onClick={() => togglePublish(blog.id, blog.published)}
                                                 className={`px-3 py-1 rounded-full text-[10px] font-bold tracking-widest transition-all ${blog.published
-                                                        ? 'bg-green-100 text-green-600'
-                                                        : 'bg-slate-100 text-slate-500'
+                                                    ? 'bg-green-100 text-green-600'
+                                                    : 'bg-slate-100 text-slate-500'
                                                     }`}
                                             >
                                                 {blog.published ? 'PUBLISHED' : 'DRAFT'}
