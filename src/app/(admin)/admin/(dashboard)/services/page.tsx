@@ -60,7 +60,7 @@ export default function ServicesPage() {
     const [loading, setLoading] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState("ALL");
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [editingService, setEditingService] = useState(null);
+    const [editingService, setEditingService] = useState<Service | null>(null);
 
     useEffect(() => {
         fetchServices();
@@ -79,7 +79,7 @@ export default function ServicesPage() {
         }
     };
 
-    const handleDelete = async (id) => {
+    const handleDelete = async (id: string) => {
         if (!confirm("Are you sure you want to delete this service?")) return;
         try {
             await fetch(`/api/admin/services/${id}`, { method: "DELETE" });
